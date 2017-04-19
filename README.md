@@ -6,7 +6,19 @@
 
 ``-`` ``_`` ``.`` ``~`` ``!`` ``*`` ``'`` ``(`` ``)``
 
-JavaScript ([encodeURI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) and [encodeURIComponent](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)) follow this convension.
+JavaScript [encodeURI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) and [encodeURIComponent](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) follow this convension.
+
+[RFC 3986](https://tools.ietf.org/html/rfc3986) of 2005 removed ``!`` ``*`` ``'`` ``(`` ``)`` from this list. It specifies that the following character are not escaped:
+
+``-`` ``_`` ``.`` ``~``
+
+The difference between [encodeURI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) and [encodeURIComponent](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) is that the former does not escape the following characters, to preserve URI integrity:
+
+``;`` ``,`` ``/`` ``?`` ``:`` ``@`` ``&`` ``=`` ``+`` ``$``
+
+This is similar to how the 4D commands ``OPEN URL``, ``HTTP Get``, ``HTTP Request``, ``Convert path system to POSIX``, ``WA OPEN URL``, etc. escapes certain characters.
+
+There is a similar HTML specification in which form data posted as ``application/x-www-form-urlencoded`` should be escaped. The notable difference is that the space character is escaped as ``+``, not ``%20``.
 
 ### Example
 
