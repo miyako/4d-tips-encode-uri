@@ -40,7 +40,7 @@ ASSERT("https://www.google.com/?q=%E3%83%95%E3%82%A9%E3%83%BC%E3%83%87%E3%82%A3%
 URL_Encode ("https://www.google.com/?q=フォーディー";RFC 3986 URI))
 ```
 
-QueryEscape()
+[.serialize](https://api.jquery.com/serialize/), [url.QueryEscape](https://golang.org/pkg/net/url/#QueryEscape)
 
 ```
 ASSERT("abc+def"=URL_Encode ("abc def";WWW FORM))
